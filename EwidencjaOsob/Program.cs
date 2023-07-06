@@ -10,6 +10,11 @@
             ////b. usuniecie osoby
             ////c. Wyszukanie danych osoby
             ////d. szukanie po jednostce rej. (filtr)
+            ///
+            //TODO Potem
+            //// Dodanie działek ewid. do jednostki (już baza danych lepiej?)
+            //// dodanie punktów do działki 
+
             MenuActionService actionService = new MenuActionService();
             actionService = Initialize(actionService);
 

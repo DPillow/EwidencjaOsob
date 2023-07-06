@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EwidencjaOsob
 {
-    internal class MenuActionService
+    public class MenuActionService
     {
         private List<MenuAction> menuActions;
 
