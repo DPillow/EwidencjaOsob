@@ -1,4 +1,4 @@
-﻿namespace EwidencjaOsob
+﻿namespace EwidencjaZlecen
 {
     internal class Program
     {
@@ -18,7 +18,7 @@
             MenuActionService actionService = new MenuActionService();
             actionService = Initialize(actionService);
 
-            Console.WriteLine("Witam w programie ewidencji osób.");
+            Console.WriteLine("Witam w programie ewidencji zleceń.");
             Console.WriteLine("Proszę o wybranie odpowiedniej czynności:");
 
             var mainMenu = actionService.GetMenuActionsByName("Main");
@@ -26,9 +26,26 @@
             {
                 Console.WriteLine($"{mainMenu[i].Id}. {mainMenu[i].Name}");
             }
+
             var operation = Console.ReadKey();
-
-
+            JobService jobService = new JobService();
+            switch(operation.KeyChar)
+            {
+                case '1':
+                    var keyInfo = jobService.AddNewJobView(actionService);
+                    jobService.AddNewJob(keyInfo.KeyChar);
+                    break;
+                case '2':
+                    break;
+                case '3':
+                    break;
+                case '4':
+                    break;
+                default:
+                    Console.WriteLine("Wybrano błędną akcję");
+                    break;
+           
+            }
 
 
 
@@ -36,10 +53,16 @@
         }
         private static MenuActionService Initialize(MenuActionService actionService)
         {
-            actionService.AddNewAction(1, "Dodaj osobę", "Main");
-            actionService.AddNewAction(2, "Usuń osobę", "Main");
-            actionService.AddNewAction(3, "Wyszukaj osobę", "Main");
-            actionService.AddNewAction(4, "Szukaj po jednostce rejestrowej", "Main");
+            actionService.AddNewAction(1, "Dodaj zlecenie", "Main");
+            actionService.AddNewAction(2, "Usuń zlecenie", "Main");
+            actionService.AddNewAction(3, "Wyszukaj zlecenie", "Main");
+            actionService.AddNewAction(4, "Szukaj po osobie", "Main");
+
+            actionService.AddNewAction(1, "Podział", "AddNewJobMenu");
+            actionService.AddNewAction(2, "Mapa do celów projektowych", "AddNewJobMenu");
+            actionService.AddNewAction(3, "Inwentaryzacja", "AddNewJobMenu");
+            actionService.AddNewAction(4, "Obsługa", "AddNewJobMenu");
+
             return actionService;
         }
 

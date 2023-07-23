@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace EwidencjaZlecen
 {
-    public class MenuAction
+    public class Job
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string MenuName { get; set; }
+        public string Type { get; set; }
+        public string Client { get; set; }
+        public string StartDate { get; set; }
     }
 }
