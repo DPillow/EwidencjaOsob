@@ -10,8 +10,8 @@ namespace EwidencjaZlecen
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
+        public int TypeId { get; set; }
         public string Client { get; set; }
-        public string StartDate { get; set; }
+        public string ModifyDate { get; set; }
     }
 }
