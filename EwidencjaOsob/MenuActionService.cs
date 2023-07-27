@@ -9,7 +9,7 @@ namespace EwidencjaZlecen
     public class MenuActionService
     {
         private List<MenuAction> menuActions;
-       
+
         public MenuActionService()
         {
             menuActions = new List<MenuAction>();
@@ -21,10 +21,10 @@ namespace EwidencjaZlecen
             menuActions.Add(menuAction);
         }
 
-        public List<MenuAction> GetMenuActionsByName(string menuName) 
+        public List<MenuAction> GetMenuActionsByName(string menuName)
         {
             List<MenuAction> result = new List<MenuAction>();
-            foreach (var menuAction in menuActions) 
+            foreach (var menuAction in menuActions)
             {
                 if (menuAction.MenuName == menuName)
                 {

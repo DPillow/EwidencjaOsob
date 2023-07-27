@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EwidencjaZlecen
 {
-    internal class JobService
+    public class JobService
     {
         public List<Job> Jobs { get; set; }
         public JobService() 

@@ -4,33 +4,22 @@
     {
         static void Main(string[] args)
         {
-            //Przywitanie
-            //Wybór akcji
-            ////a. dodanie osoby
-            ////b. usuniecie osoby
-            ////c. Wyszukanie danych osoby
-            ////d. szukanie po jednostce rej. (filtr)
-            ///
-            //TODO Potem
-            //// Dodanie działek ewid. do jednostki (już baza danych lepiej?)
-            //// dodanie punktów do działki 
-
             MenuActionService actionService = new MenuActionService();
             actionService = Initialize(actionService);
             JobService jobService = new JobService();
 
             Console.WriteLine("Witam w programie ewidencji zleceń.");
-            while (true) 
-            { 
-            Console.WriteLine("Proszę o wybranie odpowiedniej czynności:");
-
-            var mainMenu = actionService.GetMenuActionsByName("Main");
-            for (int i = 0; i < mainMenu.Count; i++)
+            while (true)
             {
-                Console.WriteLine($"{mainMenu[i].Id}. {mainMenu[i].Name}");
-            }
+                Console.WriteLine("Proszę o wybranie odpowiedniej czynności:");
 
-            var operation = Console.ReadKey();
+                var mainMenu = actionService.GetMenuActionsByName("Main");
+                for (int i = 0; i < mainMenu.Count; i++)
+                {
+                    Console.WriteLine($"{mainMenu[i].Id}. {mainMenu[i].Name}");
+                }
+
+                var operation = Console.ReadKey();
 
                 switch (operation.KeyChar)
                 {
@@ -67,10 +56,6 @@
                         break;
                 }
             }
-
-
-
-
         }
         private static MenuActionService Initialize(MenuActionService actionService)
         {
