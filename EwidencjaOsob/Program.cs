@@ -1,5 +1,10 @@
 ﻿namespace EwidencjaZlecen
 {
+
+    //TODO
+    //REFAKTORYZACJA MENU ACTION I ACTION SERVICE
+    //DODAWANIE FUNKCJONALNOŚCI
+    //POMYŚLEĆ W KTÓRĄ STRONĘ ROZWIJAĆ
     internal class Program
     {
         static void Main(string[] args)
