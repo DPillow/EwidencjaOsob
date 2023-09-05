@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace EwidencjaZlecen.Domain.Entity
 {
-    public class Job : BaseEntity
+    public class MenuAction : BaseEntity
     {
         public string Name { get; set; }
-        public int TypeId { get; set; }
-        public string Client { get; set; }
+        public string MenuName { get; set; }
 
-        public Job(int id, string name, int typeId)
+        public MenuAction(int id, string name, string menuName)
         {
+            Id = id;
             Name = name;
-            TypeId = typeId;
+            MenuName = menuName;
         }
     }
 }

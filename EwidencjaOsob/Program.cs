@@ -1,17 +1,22 @@
-﻿namespace EwidencjaZlecen
+﻿using EwidencjaZlecen.App.Abstract;
+using EwidencjaZlecen.App.Concrete;
+using EwidencjaZlecen.Domain.Entity;
+using EwidencjaZlecen.App.Managers;
+
+namespace EwidencjaZlecen
 {
 
     //TODO
-    //REFAKTORYZACJA MENU ACTION I ACTION SERVICE
     //DODAWANIE FUNKCJONALNOŚCI
-    //POMYŚLEĆ W KTÓRĄ STRONĘ ROZWIJAĆ
+    //POMYŚLEĆ W KTÓRĄ STRONĘ ROZWIJAĆ 
     internal class Program
     {
         static void Main(string[] args)
         {
             MenuActionService actionService = new MenuActionService();
-            actionService = Initialize(actionService);
             JobService jobService = new JobService();
+            JobManager jobManager = new JobManager(actionService, jobService);
+
 
             Console.WriteLine("Witam w programie ewidencji zleceń.");
             while (true)
@@ -33,51 +38,34 @@
                         break;
                     case '1':
                         Console.WriteLine("");
-                        var keyInfo = jobService.AddNewJobView(actionService);
-                        Console.WriteLine("");
-                        var id = jobService.AddNewJob(keyInfo.KeyChar);
+                        var newId = jobManager.AddNewItem();
                         break;
                     case '2':
-                        Console.WriteLine("");
-                        var removeId = jobService.RemoveJobView();
-                        jobService.RemoveJob(removeId);
-                        break;
+                        //Console.WriteLine("");
+                        //var removeId = jobService.RemoveJobView();
+                        //jobService.RemoveJob(removeId);
+                        //break;
                     case '3':
-                        Console.WriteLine("");
-                        var searchJob = jobService.SearchJobByIdView();
-                        jobService.SearchJobById(searchJob);
-                        break;
+                        //Console.WriteLine("");
+                        //var searchJob = jobService.SearchJobByIdView();
+                        //jobService.SearchJobById(searchJob);
+                        //break;
                     case '4':
-                        Console.WriteLine("");
-                        var searchJobClient = jobService.SearchJobByClientView();
-                        jobService.SearchJobByClient(searchJobClient);
-                        break;
+                        //Console.WriteLine("");
+                        //var searchJobClient = jobService.SearchJobByClientView();
+                        //jobService.SearchJobByClient(searchJobClient);
+                        //break;
                     case '5':
-                        Console.WriteLine("");
-                        jobService.ListJobs();
-                        break;
+                        //Console.WriteLine("");
+                        //jobService.ListJobs();
+                        //break;
                     default:
                         Console.WriteLine("Wybrano błędną akcję");
                         break;
                 }
             }
         }
-        private static MenuActionService Initialize(MenuActionService actionService)
-        {
-            actionService.AddNewAction(1, "Dodaj zlecenie", "Main");
-            actionService.AddNewAction(2, "Usuń zlecenie", "Main");
-            actionService.AddNewAction(3, "Wyszukaj zlecenie", "Main");
-            actionService.AddNewAction(4, "Szukaj po kliencie", "Main");
-            actionService.AddNewAction(5, "Lista robót", "Main");
-            actionService.AddNewAction(0, "Wyjście z programu", "Main");
-
-            actionService.AddNewAction(1, "Podział", "AddNewJobMenu");
-            actionService.AddNewAction(2, "Mapa do celów projektowych", "AddNewJobMenu");
-            actionService.AddNewAction(3, "Inwentaryzacja", "AddNewJobMenu");
-            actionService.AddNewAction(4, "Obsługa", "AddNewJobMenu");
-
-            return actionService;
-        }
+        
 
     }
 }

@@ -11,34 +11,54 @@ namespace EwidencjaZlecen.App.Common
 {
     public class BaseService<T> : IService<T> where T : BaseEntity
     {
-        public List<T> Jobs { get; set; }
+        public List<T> Items { get; set; }
 
         public BaseService ()
         {
-            Jobs = new List<T> ();
+            Items = new List<T> ();
         }
-        public List<T> GetAllJobs()
+        public List<T> GetAllItems()
         {
-            return Jobs;
+            return Items;
         }
-        public int AddJob(T job)
+        public int AddItem(T item)
         {
-            Jobs.Add(job);
-            return job.Id;
+            Items.Add(item);
+            return item.Id;
         }
-        public void RemoveJob(T job)
+        public void RemoveItem(T item)
         {
-            Jobs.Remove(job);
+            Items.Remove(item);
         }
 
-        public int UpdateJob(T job)
+        public int UpdateItem(T item)
         {
-            var entity = Jobs.FirstOrDefault(p => p.Id == job.Id);
+            var entity = Items.FirstOrDefault(p => p.Id == item.Id);
             if (entity != null) 
             {
-                entity = job;
+                entity = item;
             }
             return entity.Id;
+        }
+
+        public int GetLastId()
+        {
+            int lastId;
+            if (Items.Any())
+            {
+                lastId = Items.OrderBy(p => p.Id).LastOrDefault().Id;
+            }
+            else
+            {
+                lastId = 0;
+            }
+            return lastId;
+        }
+
+        public T GetItemById(int id)
+        {
+            var entity = Items.FirstOrDefault(p => p.Id == id);
+            return entity;
         }
     }
 }

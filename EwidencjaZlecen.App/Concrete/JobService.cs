@@ -1,6 +1,6 @@
 ﻿using EwidencjaZlecen.App.Common;
 using EwidencjaZlecen.Domain.Entity;
-using EwidencjaZlecen.Domain
+using EwidencjaZlecen.Domain;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -13,26 +13,7 @@ namespace EwidencjaZlecen.App.Concrete
     public class JobService : BaseService<Job>
     {
 
-        //public int SearchJobByIdView()
-        //{
-        //    Console.WriteLine("Proszę o wskazanie ID roboty do odnalezienia");
-        //    var actionSearch = Console.ReadLine();
-        //    Int32.TryParse(actionSearch.ToString(), out int id);
-        //    return id;
-        //}
-        //public void SearchJobById(int searchJob)
-        //{
-        //    Job jobToFind = new Job(); //Inicjalizujemy produkt żeby nie wywaliło null
-        //    foreach (var job in Jobs)
-        //    {
-        //        if (job.Id == searchJob)
-        //        {
-        //            jobToFind = job;
-        //            break;
-        //        }
-        //    }
-        //    Console.WriteLine($"Robota o ID: {jobToFind.Id} i nazwie {jobToFind.Name} wykonywana jest dla {jobToFind.Client} i została ostatnio zmodyfikowana {jobToFind.ModifyDate}");
-        //}
+
 
         //public string SearchJobByClientView()
         //{
@@ -62,6 +43,6 @@ namespace EwidencjaZlecen.App.Concrete
         //        Console.WriteLine($"Robota o ID: {listOfJobs.Id} i nazwie {listOfJobs.Name} wykonywana jest dla {listOfJobs.Client} i została ostatnio zmodyfikowana {listOfJobs.ModifyDate}");
         //    }
 
-        }
     }
+    
 }

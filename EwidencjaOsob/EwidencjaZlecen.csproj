@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <ProjectReference Include="..\EwidencjaZlecen.App\EwidencjaZlecen.App.csproj" />
   </ItemGroup>
 
 </Project>
