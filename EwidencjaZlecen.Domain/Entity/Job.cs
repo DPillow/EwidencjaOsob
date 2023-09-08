@@ -13,10 +13,12 @@ namespace EwidencjaZlecen.Domain.Entity
         public int TypeId { get; set; }
         public string Client { get; set; }
 
-        public Job(int id, string name, int typeId)
+        public Job(int id, string name, int typeId, string client)
         {
+            Id = id;
             Name = name;
             TypeId = typeId;
+            Client = client;
         }
     }
 }

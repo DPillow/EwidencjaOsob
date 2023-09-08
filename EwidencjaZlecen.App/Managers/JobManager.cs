@@ -19,10 +19,11 @@ namespace EwidencjaZlecen.App.Managers
             _actionService = actionService;
             _jobService = jobService;
         }
-        public int AddNewItem()
+        public int AddNewJob()
         {
             var addNewJobMenu = _actionService.GetMenuActionsByName("AddNewJobMenu");
-            Console.WriteLine("Please select job type:");
+            Console.WriteLine("");
+            Console.WriteLine("Proszę o wybranie typu roboty:");
             for (int i = 0; i < addNewJobMenu.Count; i++)
             {
                 Console.WriteLine($"{addNewJobMenu[i].Id}. {addNewJobMenu[i].Name}");
@@ -31,26 +32,36 @@ namespace EwidencjaZlecen.App.Managers
             var operation = Console.ReadKey();
             int typeId;
             Int32.TryParse(operation.KeyChar.ToString(), out typeId);
-            Console.WriteLine("Please insert name for job:");
+            Console.WriteLine("");
+            Console.WriteLine("Proszę o wybranie nazwy roboty:");
             var name = Console.ReadLine();
-            var lastId = _jobService.GetLastId();
-            Job job = new Job(lastId + 1, name, typeId);
+            var lastId = _jobService.GetLastId();// to gówno nie znajduje ostatniego ID
+            Console.WriteLine("");
+            Console.WriteLine("Proszę o podanie klienta:");
+            var client = Console.ReadLine();
+            int newId = lastId + 1;
+            Job job = new Job(newId, name, typeId, client);
             _jobService.AddItem(job);
             return job.Id;
         }
 
         public void RemoveJobById(int id)
         {
-            var item = _jobService.GetItemById(id);
-            _jobService.RemoveItem(item);
+            var job = _jobService.GetItemById(id);
+            _jobService.RemoveItem(job);
+            Console.WriteLine($"Robota o ID: {id} została usunięta");
         }
 
-        public Job GetItemById(int id)
+        public Job GetJobById(int id)
         {
-            var item = _jobService.GetItemById(id);
-            return item;
+            var job = _jobService.GetItemById(id);
+            return job;
         }
 
-
+        public Job GetItemByClient(string searchClient)
+        {
+            var job = _jobService.GetItemByClient(searchClient);
+            return job;
+        }
     }
 }

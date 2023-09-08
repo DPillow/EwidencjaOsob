@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EwidencjaZlecen.App.Abstract;
+﻿using EwidencjaZlecen.App.Abstract;
 using EwidencjaZlecen.Domain.Common;
-using EwidencjaZlecen.Domain.Entity;
 
 namespace EwidencjaZlecen.App.Common
 {
@@ -17,7 +11,7 @@ namespace EwidencjaZlecen.App.Common
         {
             Items = new List<T> ();
         }
-        public List<T> GetAllItems()
+        public List<T> GetAllIItems()
         {
             return Items;
         }
@@ -59,6 +53,11 @@ namespace EwidencjaZlecen.App.Common
         {
             var entity = Items.FirstOrDefault(p => p.Id == id);
             return entity;
+        }
+
+        public T GetItemByClient(string cilent)
+        {
+            throw new NotImplementedException();
         }
     }
 }

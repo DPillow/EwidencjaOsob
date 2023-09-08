@@ -1,4 +1,5 @@
 ﻿using EwidencjaZlecen.App.Common;
+using EwidencjaZlecen.App.Abstract;
 using EwidencjaZlecen.Domain.Entity;
 using EwidencjaZlecen.Domain;
 using System;
@@ -12,8 +13,18 @@ namespace EwidencjaZlecen.App.Concrete
 {
     public class JobService : BaseService<Job>
     {
-
-
+        public List<Job> GetItemByClient(string searchJobClient)
+        {
+            List<Job> jobToFindClient = new List<Job>();
+            foreach (var job in Items)
+            {
+                if (job.Client == searchJobClient)
+                {
+                    jobToFindClient.Add(job);
+                }
+            }
+            return jobToFindClient;
+        }
 
         //public string SearchJobByClientView()
         //{

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EwidencjaZlecen.Helpers
 {
-    public static class TableParser
+    public static class TableParser //nie wiem dlaczego to tutaj jest, potem najwyżej usunę
     {
         public static string ToStringTable<T>(
           this IEnumerable<T> values,
