@@ -55,27 +55,23 @@ namespace EwidencjaZlecen
                         break;
                     case '2':
                         Console.WriteLine("");
-                        Console.WriteLine("Proszę o wpisanie id roboty do usunięcia: ");
+                        Console.WriteLine("Proszę o wpisanie id zlecenia do usunięcia: ");
                         Int32.TryParse(Console.ReadLine(), out int inputId);
                         jobManager.RemoveJobById(inputId);
                         break;
                     case '3':
                         Console.WriteLine("");
-                        Console.WriteLine("Proszę o wpisanie id roboty do wyszukania: ");
+                        Console.WriteLine("Proszę o wpisanie id zlecenia do wyszukania: ");
                         Int32.TryParse(Console.ReadLine(), out int searchId);
                         var jobFound = jobManager.GetJobById(searchId);
                         Console.WriteLine($"Robota o ID: {jobFound.Id} i nazwie {jobFound.Name} wykonywana jest dla {jobFound.Client} i została ostatnio zmodyfikowana {jobFound.UpdatedDateTime}");//tutaj do walnięcia check jeżeli nie ma zamiast crashu programu
                         break;
                     case '4':
                         Console.WriteLine("");
-                        Console.WriteLine("Proszę o wpisanie id roboty do wyszukania: ");
+                        Console.WriteLine("Proszę o wpisanie klienta do wyszukania zlecenia: ");
                         string searchClient = Console.ReadLine();
                         var jobFoundByClient = jobManager.GetItemByClient(searchClient);
-                        for (int i = 0; i < jobFoundByClient.Count; i++)//coś jest walnięte z job managerem, ogarnąć struktury
-                        {
-                            Console.WriteLine($"Robota o ID: {jobFoundByClient.Id} i nazwie {jobFoundByClient.Name} wykonywana jest dla {jobFoundByClient.Client} i została ostatnio zmodyfikowana {jobFoundByClient.UpdatedDateTime}");//tutaj do walnięcia check jeżeli nie ma zamiast crashu programu
-                        }
-                        
+                        Console.WriteLine($"Robota o ID: {jobFoundByClient.Id} i nazwie {jobFoundByClient.Name} wykonywana jest dla {jobFoundByClient.Client} i została ostatnio zmodyfikowana {jobFoundByClient.UpdatedDateTime}");//Jak wprowadzić żeby kilka znajdowało
                         break;
                     case '5':
                         //Console.WriteLine(""); //Lista robót

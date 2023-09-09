@@ -35,7 +35,7 @@ namespace EwidencjaZlecen.App.Managers
             Console.WriteLine("");
             Console.WriteLine("Proszę o wybranie nazwy roboty:");
             var name = Console.ReadLine();
-            var lastId = _jobService.GetLastId();// to gówno nie znajduje ostatniego ID
+            var lastId = _jobService.GetLastId();
             Console.WriteLine("");
             Console.WriteLine("Proszę o podanie klienta:");
             var client = Console.ReadLine();

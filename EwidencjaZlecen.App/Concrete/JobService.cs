@@ -13,12 +13,12 @@ namespace EwidencjaZlecen.App.Concrete
 {
     public class JobService : BaseService<Job>
     {
-        public List<Job> GetItemByClient(string searchJobClient)
+        public List<Job> GetItemByClient(string clientName)
         {
             List<Job> jobToFindClient = new List<Job>();
             foreach (var job in Items)
             {
-                if (job.Client == searchJobClient)
+                if (job.Client == clientName)
                 {
                     jobToFindClient.Add(job);
                 }

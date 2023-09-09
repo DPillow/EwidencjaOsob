@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EwidencjaZlecen.Domain.Common;
+using EwidencjaZlecen.Domain.Entity;
 
 namespace EwidencjaZlecen.App.Abstract  //w abstract wrzucamy interfejsy
 {
@@ -16,6 +17,6 @@ namespace EwidencjaZlecen.App.Abstract  //w abstract wrzucamy interfejsy
         void RemoveItem(T item);
         int GetLastId();
         T GetItemById(int id);
-        T GetItemByName(int id);
+        List<Job> GetItemByClient(string clientName);
     }
 }

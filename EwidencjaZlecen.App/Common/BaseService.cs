@@ -55,7 +55,7 @@ namespace EwidencjaZlecen.App.Common
             return entity;
         }
 
-        public T GetItemByClient(string cilent)
+        public T GetItemByClient(string clientName)
         {
             throw new NotImplementedException();
         }
