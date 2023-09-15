@@ -13,9 +13,9 @@ namespace EwidencjaZlecen.App.Managers
     public class JobManager
     {
         private readonly MenuActionService _actionService;
-        private IService<Job> _jobService;
+        private JobService _jobService;
 
-        public JobManager(MenuActionService actionService, IService<Job> jobService)
+        public JobManager(MenuActionService actionService, JobService jobService)
         {
             _actionService = actionService;
             _jobService = jobService;
@@ -59,9 +59,9 @@ namespace EwidencjaZlecen.App.Managers
             return job;
         }
 
-        public Job GetItemByClient(string searchClient)
+        public List<Job> GetItemByClient(string searchClient)
         {
-            var job = _jobService2.GetItemByClient(searchClient);
+            var job = _jobService.GetItemByClient(searchClient);
             return job;
         }
     }
