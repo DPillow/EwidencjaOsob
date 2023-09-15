@@ -1,5 +1,4 @@
-﻿using EwidencjaZlecen.App.Common;
-using EwidencjaZlecen.App.Abstract;
+﻿using EwidencjaZlecen.App.Abstract;
 using EwidencjaZlecen.Domain.Entity;
 using EwidencjaZlecen.Domain;
 using System;
@@ -8,6 +7,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EwidencjaZlecen.App.Common;
 
 namespace EwidencjaZlecen.App.Concrete
 {
@@ -25,7 +25,7 @@ namespace EwidencjaZlecen.App.Concrete
             }
             return jobToFindClient;
         }
-
+                
         //public string SearchJobByClientView()
         //{
         //    Console.WriteLine("Proszę o wpisanie nazwiska i imienia klienta do odnalezienia");
@@ -55,5 +55,5 @@ namespace EwidencjaZlecen.App.Concrete
         //    }
 
     }
-    
+
 }

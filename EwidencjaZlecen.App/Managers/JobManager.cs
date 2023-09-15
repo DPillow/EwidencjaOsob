@@ -1,4 +1,5 @@
 ﻿using EwidencjaZlecen.App.Abstract;
+using EwidencjaZlecen.App.Common;
 using EwidencjaZlecen.App.Concrete;
 using EwidencjaZlecen.Domain.Entity;
 using System;
@@ -12,7 +13,6 @@ namespace EwidencjaZlecen.App.Managers
     public class JobManager
     {
         private readonly MenuActionService _actionService;
-        private readonly JobService _jobService2;
         private IService<Job> _jobService;
 
         public JobManager(MenuActionService actionService, IService<Job> jobService)

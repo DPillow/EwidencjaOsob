@@ -17,6 +17,5 @@ namespace EwidencjaZlecen.App.Abstract  //w abstract wrzucamy interfejsy
         void RemoveItem(T item);
         int GetLastId();
         T GetItemById(int id);
-        T GetItemByClient(string clientName);
     }
 }

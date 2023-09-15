@@ -54,10 +54,5 @@ namespace EwidencjaZlecen.App.Common
             var entity = Items.FirstOrDefault(p => p.Id == id);
             return entity;
         }
-
-        public T GetItemByClient(string clientName)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
