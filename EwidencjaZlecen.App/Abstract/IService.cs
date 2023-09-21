@@ -10,7 +10,7 @@ namespace EwidencjaZlecen.App.Abstract  //w abstract wrzucamy interfejsy
 {
     public interface IService <T>// Generyczny interfejs
     {
-        List<T> Items { get; set; }
+        public List<T> Items { get; set; }
         List<T> GetAllIItems();
         int AddItem(T item);
         int UpdateItem(T item);

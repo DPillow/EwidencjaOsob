@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace EwidencjaZlecen.App.Abstract
 {
-    public interface IJobService
+    public interface IJobService : IService<Job>
     {
-        List<Job> GetItemByClient(string clientName);
+                List<Job> GetItemByClient(string clientName);
     }
 }

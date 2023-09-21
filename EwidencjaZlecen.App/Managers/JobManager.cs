@@ -13,9 +13,9 @@ namespace EwidencjaZlecen.App.Managers
     public class JobManager
     {
         private readonly MenuActionService _actionService;
-        private JobService _jobService;
+        private IService<Job> _jobService;
 
-        public JobManager(MenuActionService actionService, JobService jobService)
+        public JobManager(MenuActionService actionService, IService<Job> jobService)
         {
             _actionService = actionService;
             _jobService = jobService;
@@ -41,7 +41,7 @@ namespace EwidencjaZlecen.App.Managers
             Console.WriteLine("Proszę o podanie klienta:");
             var client = Console.ReadLine();
             int newId = lastId + 1;
-            Job job = new Job(newId, name, typeId, client);
+            Job job = new Job(newId, name, typeId, client);//Tutaj się dodaje robota jako JOB, więc nie muszę wyciągać pierdolonego items, muszę zebrać JOOOOOOOB.
             _jobService.AddItem(job);
             return job.Id;
         }
@@ -56,12 +56,6 @@ namespace EwidencjaZlecen.App.Managers
         public Job GetJobById(int id)
         {
             var job = _jobService.GetItemById(id);
-            return job;
-        }
-
-        public List<Job> GetItemByClient(string searchClient)
-        {
-            var job = _jobService.GetItemByClient(searchClient);
             return job;
         }
     }

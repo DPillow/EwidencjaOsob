@@ -68,11 +68,14 @@ namespace EwidencjaZlecen
                         Console.WriteLine($"Robota o ID: {jobFound.Id} i nazwie {jobFound.Name} wykonywana jest dla {jobFound.Client} i została ostatnio zmodyfikowana {jobFound.UpdatedDateTime}");//tutaj do walnięcia check jeżeli nie ma zamiast crashu programu
                         break;
                     case '4':
-                        Console.WriteLine("");
-                        Console.WriteLine("Proszę o wpisanie klienta do wyszukania zlecenia: ");
-                        string searchClient = Console.ReadLine();
-                        var jobFoundByClient = jobManager.GetItemByClient(searchClient);
-                        Console.WriteLine($"Robota o ID: {jobFoundByClient.Id} i nazwie {jobFoundByClient.Name} wykonywana jest dla {jobFoundByClient.Client} i została ostatnio zmodyfikowana {jobFoundByClient.UpdatedDateTime}");//Jak wprowadzić żeby kilka znajdowało
+                        //Console.WriteLine("");
+                        //Console.WriteLine("Proszę o wpisanie klienta do wyszukania zlecenia: ");
+                        //string searchClient = Console.ReadLine();
+                        //var jobFoundByClient = jobManager.GetItemByClient(searchClient);
+                        //for (int i = 0; i < jobFoundByClient.Count; i++)
+                        //{
+                        //    Console.WriteLine($"Robota o ID: {jobFoundByClient.Id} i nazwie {jobFoundByClient.Name} wykonywana jest dla {jobFoundByClient.Client} i została ostatnio zmodyfikowana {jobFoundByClient.UpdatedDateTime}");//Jak wprowadzić żeby kilka znajdowało
+                        //}
                         break;
                     case '5':
                         //Console.WriteLine(""); //Lista robót
